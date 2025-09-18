@@ -71,7 +71,4 @@ Contributions are welcome:
 
 ---
 
-
----
-
 *Developed by [Kalyanishivade](https://github.com/Kalyanishivade)*
