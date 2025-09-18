@@ -1,0 +1,66 @@
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ppPackages/
+*.appx
+*.appxupload
+
+# Visual Studio Code
+.vscode/
+
+# Resharper / Rider
+.idea/
+*.DotSettings.user
+
+# MAUI specific
+Platforms/Android/obj/
+Platforms/Android/bin/
+Platforms/iOS/obj/
+Platforms/iOS/bin/
+Platforms/MacCatalyst/obj/
+Platforms/MacCatalyst/bin/
+Platforms/Windows/obj/
+Platforms/Windows/bin/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+*.nuget/
+packages/
+
+# Cache / logs
+*.log
+*.cache
+*.db
+*.pdb
+
+# Others
+*.tmp
+*.bak
+*.swp
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# Windows
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Baclground.MVVM.ViewModels"
+             x:Class="Baclground.MVVM.Views.EmployeeOverviewPage"
+             Title="Overview">
+
+    <ContentPage.BindingContext>
+        <viewmodels:EmployeeProfileViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15">
+            <Label Text="{Binding Employee.Name}" FontAttributes="Bold" FontSize="22" />
+            <Label Text="{Binding Employee.Role}" FontSize="16" />
+            <Label Text="{Binding Employee.Type}" TextColor="Blue" />
+
+            <Label Text="📧 Email" FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Label Text="{Binding Employee.Email}" />
+
+            <Label Text="📍 Location: " FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Label Text="{Binding Employee.Location}" />
+
+            <Label Text="📅 Joined on:" FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Label Text="{Binding Employee.JoinedDate, StringFormat='{0:dd MMM yyyy}'}" />
+
+            <Label Text="🎂 DOB:" FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Label Text="{Binding Employee.DOB, StringFormat='{0:dd MMM yyyy}'}" />
+
+            <Label Text="🩸 Blood Group: " FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Label Text="{Binding Employee.BloodGroup}" />
+
+            <Label Text="👨‍💼 Reports to: " FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Label Text="{Binding Employee.Manager}" />
+
+            <Label Text="🏠 Address: " FontAttributes="Bold" Margin="0,10,0,0"/>
+            <Label Text="{Binding Employee.Address}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

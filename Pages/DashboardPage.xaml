@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+            xmlns:vm="clr-namespace:Baclground.MVVM.ViewModels;assembly=Baclground"  
+            x:Class="Baclground.MVVM.Pages.DashboardPage"  
+            Title="Dashboard">  
+
+   <!-- Bind this page to DashboardViewModel -->  
+   <ContentPage.BindingContext>  
+       <vm:DashboardViewModel />  
+   </ContentPage.BindingContext>  
+
+   <ScrollView>  
+       <VerticalStackLayout Padding="10">  
+
+           <!-- Categories -->  
+           <CollectionView ItemsSource="{Binding Categories}">  
+               <CollectionView.ItemTemplate>  
+                   <DataTemplate>  
+                       <Frame BorderColor="Gray" Margin="5" Padding="10">  
+                           <VerticalStackLayout>  
+
+                               <!-- Category Name -->  
+                               <Label Text="{Binding Name}"   
+                                      FontSize="18"   
+                                      FontAttributes="Bold" />  
+
+                               <!-- Widgets -->  
+                               <CollectionView ItemsSource="{Binding Widgets}">  
+                                   <CollectionView.ItemTemplate>  
+                                       <DataTemplate>  
+                                           <Frame BorderColor="LightGray" Padding="10" Margin="5">  
+                                               <Grid ColumnDefinitions="*,Auto">  
+                                                   <VerticalStackLayout>  
+                                                       <Label Text="{Binding Title}"   
+                                                              FontSize="16"   
+                                                              FontAttributes="Bold"/>  
+                                                       <Label Text="{Binding Text}"   
+                                                              FontSize="14"/>  
+                                                   </VerticalStackLayout>  
+
+                                                   <!-- Remove Widget Button -->  
+                                                   <Button Text="X"  
+                                                           Grid.Column="1"  
+                                                           BackgroundColor="Red"  
+                                                           TextColor="White"  
+                                                           Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.RemoveWidgetCommand}"  
+                                                           CommandParameter="{Binding .}" />  
+                                               </Grid>  
+                                           </Frame>  
+                                       </DataTemplate>  
+                                   </CollectionView.ItemTemplate>  
+                               </CollectionView>  
+
+                               <!-- Add Widget Button -->  
+                               <Button Text="+ Add Widget"  
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.AddWidgetCommand}"  
+                                       CommandParameter="{Binding .}" />  
+                           </VerticalStackLayout>  
+                       </Frame>  
+                   </DataTemplate>  
+               </CollectionView.ItemTemplate>  
+           </CollectionView>  
+
+       </VerticalStackLayout>  
+   </ScrollView>  
+</ContentPage>
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Baclground.Pages.DashboardPage"
+             Title="Dashboard"
+             BackgroundColor="SkyBlue">
+
+    <Grid Padding="0">
+
+        --><!-- Simulated Mobile Frame with Top Notch --><!--
+        <VerticalStackLayout>
+
+            --><!-- Top Notch Simulation --><!--
+            <BoxView HeightRequest="30"
+                     WidthRequest="140"
+                     BackgroundColor="White"
+                     CornerRadius="10"
+                     HorizontalOptions="Center"
+                     Margin="0,20,0,0" />
+
+            --><!-- Scrollable Dashboard Content --><!--
+            <ScrollView>
+                <VerticalStackLayout Padding="20" Spacing="20">
+
+                    --><!-- Dashboard Title --><!--
+                    <Label Text="Dashboard"
+                           FontSize="26"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="Black" />
+
+                    --><!-- Net Worth Card --><!--
+                    <Frame BackgroundColor="#1565C0"
+                           CornerRadius="20"
+                           Padding="20"
+                           HasShadow="True">
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Your Net Worth"
+                                   FontSize="18"
+                                   TextColor="White" />
+                            <Label Text="₹ 4.58L"
+                                   FontSize="28"
+                                   FontAttributes="Bold"
+                                   TextColor="White" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    --><!-- Invested and Returns --><!--
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="15">
+                        <Frame BackgroundColor="White"
+                               CornerRadius="10"
+                               Padding="10"
+                               HasShadow="True">
+                            <VerticalStackLayout>
+                                <Label Text="Invested"
+                                       FontSize="14"
+                                       TextColor="Gray" />
+                                <Label Text="₹ 5.60L"
+                                       FontSize="16"
+                                       FontAttributes="Bold" />
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <Frame BackgroundColor="White"
+                               CornerRadius="10"
+                               Padding="10"
+                               HasShadow="True">
+                            <VerticalStackLayout>
+                                <Label Text="Returns"
+                                       FontSize="14"
+                                       TextColor="Gray" />
+                                <Label Text="₹ 1.02L"
+                                       FontSize="16"
+                                       FontAttributes="Bold" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+
+                    --><!-- CTA Button --><!--
+                    <Button Text="Explore more investment options →"
+                            BackgroundColor="#1976D2"
+                            TextColor="White"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            CornerRadius="12"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand" />
+
+                    --><!-- Investment Details --><!--
+                    <Label Text="Investment Details"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="Black" />
+
+                    <Frame BackgroundColor="White"
+                           CornerRadius="10"
+                           Padding="15"
+                           HasShadow="True">
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="• Mutual Funds"
+                                   FontSize="16"
+                                   TextColor="Black" />
+                            <Label Text="• Stocks"
+                                   FontSize="16"
+                                   TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    --><!-- Avatar at Bottom --><!--
+                    <Image Source="user_avatar.png"
+                           HeightRequest="60"
+                           WidthRequest="60"
+                           HorizontalOptions="Center"
+                           Margin="0,20,0,10" />
+                </VerticalStackLayout>
+            </ScrollView>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>-->
