@@ -1,42 +1,80 @@
-# Dashboard
+# Dashboard (.NET MAUI Application)
 
-A modern and interactive **Dashboard application** for managing and visualizing data effectively.
-
-## 🚀 Features
-- Clean and intuitive user interface
-- Data visualization with charts and graphs
-- Lightweight and responsive design
-- Easy integration with external data sources
-
-## 📂 Project Structure
-```
-Dashboard/
-├── Resources/
-│   ├── Images/         # Application images and assets
-│   ├── Styles/         # XAML styles and themes
-│   └── Splash/         # Splash screen assets
-├── App.xaml            # Application entry configuration
-├── MainWindow.xaml     # Main dashboard window
-└── README.md           # Project documentation
-```
-
-## 🛠️ Installation & Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Kalyanishivade/Dashboard.git
-   ```
-2. Navigate into the project folder:
-   ```bash
-   cd Dashboard
-   ```
-3. Build and run the project using Visual Studio / your preferred IDE.
-
-## 🤝 Contributing
-Contributions are welcome! Please fork the repo and create a pull request with detailed information about your changes.
-
-## 📜 License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+A cross-platform dashboard application built with **.NET MAUI**.  
+The project includes platform-specific files, resource management, and XAML-based UI pages.
 
 ---
 
-💡 Developed by [Kalyanishivade](https://github.com/Kalyanishivade)
+## 📂 Project Structure
+
+```text
+Dashboard/
+├── Pages/
+│   ├── MainPage.xaml           # Main dashboard UI page
+│   └── AddImagePage.xaml       # Page to add or upload images
+├── Resources/
+│   └── Images/                 # Image assets used in app
+├── Platforms/                  # Platform-specific files (Android, iOS, Windows, etc.)
+├── Properties/                 # Configuration & assembly info
+├── AppShell.xaml               # Navigation shell for app
+├── MauiProgram.cs              # App startup and dependency setup
+├── Baclground.csproj           # Project file
+├── .gitignore                  # Git ignore rules for VS/MAUI
+└── README.md                   # Project documentation
+```
+
+---
+
+## ⚙️ Requirements
+
+- .NET SDK (version used in this project, e.g. .NET 7/8)  
+- Visual Studio 2022+ with MAUI workload installed  
+- For mobile targets: Android SDK / iOS toolchain  
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Kalyanishivade/Dashboard.git
+   cd Dashboard
+   ```
+
+2. Open in **Visual Studio**.  
+   - Restore NuGet packages.  
+   - Select target platform (Windows, Android, iOS, MacCatalyst).  
+
+3. Build and run:
+   - Run on Windows via **Start Debugging** (F5).  
+   - Or deploy to Android/iOS if configured.  
+
+---
+
+## 📋 Features
+
+- `MainPage.xaml`: main dashboard screen.  
+- `AddImagePage.xaml`: UI page for adding/uploading images.  
+- Cross-platform structure via `Platforms/`.  
+- Centralized resources in `Resources/Images`.  
+- Uses `.NET MAUI Shell` (`AppShell.xaml`) for navigation.  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome:  
+- Fork the repository  
+- Create a feature branch  
+- Commit your changes  
+- Open a Pull Request  
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+---
+
+*Developed by [Kalyanishivade](https://github.com/Kalyanishivade)*
